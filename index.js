@@ -59,7 +59,9 @@ async function run() {
             const services = await cursor.toArray()
             res.send(services)
         })
-
+        app.get('/hero', (req, res) => {
+            res.send('hero makes heroku')
+        })
         app.get('/service/:id', async (req, res) => {
             const id = req.params.id
             const query = { _id: ObjectId(id) }
